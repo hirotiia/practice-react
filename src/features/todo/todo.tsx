@@ -1,10 +1,11 @@
-const Todo = () => {
+export const Todo = () => {
   return (
-    <div>
-      <input type='text' />
+    <form action='__dummy__'>
+      <label>
+        name:
+        <input type='text' name='name' />
+      </label>
       <button type='submit'>送信</button>
-    </div>
-  )
-}
-
-export default Todo
+    </form>
+  );
+};
