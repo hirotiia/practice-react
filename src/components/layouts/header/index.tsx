@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import { styled } from 'styled-components';
 
 const StyledHeader = styled.header`
@@ -13,7 +14,7 @@ export const Header = () => {
   return (
     <StyledHeader>
       <div>
-        <a href='/'>React 練習用</a>
+        <Link href={'/lessons'}>Lessons ページへ</Link>
       </div>
     </StyledHeader>
   );
