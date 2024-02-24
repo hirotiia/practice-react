@@ -6,7 +6,7 @@ const RessonsList = styled.ul`
   li {
     list-style-type: none;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 20px;
 
     a {

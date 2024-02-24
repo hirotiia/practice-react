@@ -43,7 +43,9 @@ export default function Home() {
       <main className={styles.main}>
         <h1>React学習記録</h1>
         <P>このサイトはReactを学びながら、Next.jsの環境にもなれていくための学習記録サイトです。</P>
-        <P>できるだけ毎日草生やす。</P>
+        <P>
+          焦らず、着実に、気ままに、作りながら基礎がためをしていくためのプログラミング用のジムみたいなものです。
+        </P>
         <H2>学習中の教材一覧</H2>
 
         <ListItems listData={listData}></ListItems>
