@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 
 export default function Lesson() {
@@ -7,6 +9,7 @@ export default function Lesson() {
 
       <h2>
         <Link href={'/'}>Back to home</Link>
+        <Link href={'/ir'}>irページへ</Link>
       </h2>
     </>
   );

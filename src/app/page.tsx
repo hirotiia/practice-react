@@ -5,7 +5,6 @@ import { styled } from 'styled-components';
 import styles from './page.module.css';
 import { ListItems } from '@/components/elements/list/list/list';
 import { Header } from '@/components/layouts/header';
-import { Filesync } from '@/lib/filesync/filesync';
 
 const P = styled.p`
   margin-top: 30px;
@@ -50,8 +49,6 @@ export default function Home() {
         <H2>学習中の教材一覧</H2>
 
         <ListItems listData={listData}></ListItems>
-
-        <Filesync></Filesync>
       </main>
     </>
   );
