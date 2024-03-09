@@ -1,9 +1,9 @@
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const id = searchParams.get('id');
-  const api_key = process.env.API_KEY;
+  const { API_KEY } = process.env;
   const res = await fetch(
-    `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=AAPL&apikey=${api_key}`,
+    `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=AAPL&apikey=${API_KEY}`,
   );
   const product = await res.json();
 
