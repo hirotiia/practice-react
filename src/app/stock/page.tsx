@@ -3,20 +3,34 @@
 import { useState } from 'react';
 
 export default function Page() {
-  const [data, setData] = useState('');
+  const [tickerSymbol, setSymbol] = useState('');
+  const [title, setTitle] = useState('');
 
-  async function getData() {
-    const res = await fetch('/api/stock?q=client');
+  async function getData(): Promise<void> {
+    const res = await fetch(`/api/stock?ticker_symbol=${tickerSymbol}`);
     const data = await res.json();
-    setData(data.message);
+    setSymbol(data.globalNews.Information);
+    setTitle(data.globalNews.Information);
+
+    console.log(data.globalNews);
   }
 
   return (
-    <div className='text-center mt-8'>
-      <button className='bg-gray-200 p-2 mb-5' onClick={getData}>
-        データを取得
-      </button>
-      <p>{data}</p>
+    <div>
+      <label htmlFor='symbol'>
+        Ticker symbolで入力してください
+        <input
+          type='text'
+          id='symbol'
+          onChange={(e) => {
+            setSymbol(e.target.value);
+          }}
+          value={tickerSymbol}
+        />
+        <button onClick={getData}>ニュースを取得</button>
+      </label>
+      <h1>title: {title}</h1>
+      <span>Ticker synbol:{tickerSymbol}</span>
     </div>
   );
 }

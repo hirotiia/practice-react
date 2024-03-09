@@ -22,7 +22,7 @@ const H2 = styled.h2`
 `;
 
 export default function Home() {
-  const listData = [
+  const materials = [
     {
       id: 1,
       time: '2024-02-24',
@@ -37,6 +37,15 @@ export default function Home() {
     },
   ];
 
+  const createPage = [
+    {
+      id: 2,
+      time: '2024-03-09',
+      href: '/stock',
+      text: '最新の米国株ニュースを取得できるページ',
+    },
+  ];
+
   return (
     <>
       <Header></Header>
@@ -47,8 +56,9 @@ export default function Home() {
           焦らず、着実に、気ままに、作りながら基礎がためをしていくためのプログラミング用のジムみたいなものです。
         </P>
         <H2>学習中の教材一覧</H2>
-
-        <ListItems listData={listData}></ListItems>
+        <ListItems listData={materials}></ListItems>
+        <H2>作成中のページ</H2>
+        <ListItems listData={createPage}></ListItems>
       </main>
     </>
   );
