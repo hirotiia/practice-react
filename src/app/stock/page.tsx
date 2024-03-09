@@ -11,8 +11,6 @@ export default function Page() {
     const data = await res.json();
     setSymbol(data.globalNews.Information);
     setTitle(data.globalNews.Information);
-
-    console.log(data.globalNews);
   }
 
   return (
