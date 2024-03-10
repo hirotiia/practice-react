@@ -1,6 +1,7 @@
 'use client';
 
 import { styled } from 'styled-components';
+import { H1 } from '@/components/elements/heading/headingLv1/headingLv1';
 import { ListItems } from '@/components/elements/list/list/list';
 
 const P = styled.p`
@@ -45,7 +46,7 @@ export default function Home() {
 
   return (
     <>
-      <h1>React学習記録</h1>
+      <H1>React学習記録</H1>
       <P>このサイトはReactを学びながら、Next.jsの環境にもなれていくための学習記録サイトです。</P>
       <P>
         サンプルとして米国株APIをしようして、銘柄の最新情報を取得するアプリケーションを開発予定です。
