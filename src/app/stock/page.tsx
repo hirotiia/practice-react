@@ -1,6 +1,16 @@
 'use client';
 
 import { useState } from 'react';
+import { styled } from 'styled-components';
+
+const P = styled.p`
+  margin-top: 30px;
+  color: #666666;
+
+  & + p {
+    margin-top: 10px;
+  }
+`;
 
 export default function Page() {
   const [tickerSymbol, setSymbol] = useState('');
@@ -9,17 +19,20 @@ export default function Page() {
   async function getData(): Promise<void> {
     const res = await fetch(`/api/stock?ticker_symbol=${tickerSymbol}`);
     const data = await res.json();
-    setSymbol(data.globalNews.Information);
-    setTitle(data.globalNews.Information);
+    setSymbol(tickerSymbol);
+    setTitle(data.globalNews.feed[0].title);
   }
 
   return (
-    <div>
-      <label htmlFor='symbol'>
-        Ticker symbolで入力してください
+    <>
+      <h1>米国株最新ニュース検索</h1>
+      <P>
+        ティッカーシンボルを入力すると、その銘柄に関する最新のニュースのリストを一覧で確認できます。
+      </P>
+      <label>
+        Ticker symbol
         <input
           type='text'
-          id='symbol'
           onChange={(e) => {
             setSymbol(e.target.value);
           }}
@@ -29,6 +42,6 @@ export default function Page() {
       </label>
       <h1>title: {title}</h1>
       <span>Ticker synbol:{tickerSymbol}</span>
-    </div>
+    </>
   );
 }

@@ -1,10 +1,7 @@
 'use client';
 
-import Image from 'next/image';
 import { styled } from 'styled-components';
-import styles from './page.module.css';
 import { ListItems } from '@/components/elements/list/list/list';
-import { Header } from '@/components/layouts/header';
 
 const P = styled.p`
   margin-top: 30px;
@@ -48,18 +45,15 @@ export default function Home() {
 
   return (
     <>
-      <Header></Header>
-      <main className={styles.main}>
-        <h1>React学習記録</h1>
-        <P>このサイトはReactを学びながら、Next.jsの環境にもなれていくための学習記録サイトです。</P>
-        <P>
-          焦らず、着実に、気ままに、作りながら基礎がためをしていくためのプログラミング用のジムみたいなものです。
-        </P>
-        <H2>学習中の教材一覧</H2>
-        <ListItems listData={materials}></ListItems>
-        <H2>作成中のページ</H2>
-        <ListItems listData={createPage}></ListItems>
-      </main>
+      <h1>React学習記録</h1>
+      <P>このサイトはReactを学びながら、Next.jsの環境にもなれていくための学習記録サイトです。</P>
+      <P>
+        サンプルとして米国株APIをしようして、銘柄の最新情報を取得するアプリケーションを開発予定です。
+      </P>
+      <H2>学習中の教材一覧</H2>
+      <ListItems listData={materials}></ListItems>
+      <H2>作成中のページ</H2>
+      <ListItems listData={createPage}></ListItems>
     </>
   );
 }

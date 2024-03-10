@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { styled } from 'styled-components';
 
 const RessonsList = styled.ul`
@@ -34,15 +35,18 @@ export function ListItems({
   listData: Array<{ id: number; time: string; href: string; text: string }>;
 }) {
   const listItems = listData.map((data) => {
+    const isAbsoluteURL = data.href.startsWith('http');
+    const targetBlank = isAbsoluteURL ? { target: '_blank' } : {};
+
     return (
       <li key={data.id}>
         <div>
           <time dateTime={data.time}>{data.time.replaceAll('-', '.')}</time>
         </div>
         <div>
-          <a href={data.href} target='_blank'>
+          <Link href={data.href} {...targetBlank}>
             {data.text}
-          </a>
+          </Link>
         </div>
       </li>
     );
