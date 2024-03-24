@@ -3,15 +3,7 @@
 import { styled } from 'styled-components';
 import { H2 } from '@/components/elements/heading/headingLv2/headingLv2';
 import { TimeList } from '@/components/elements/list/timeList/timeList';
-
-const P = styled.p`
-  margin-top: 30px;
-  color: #666666;
-
-  & + p {
-    margin-top: 10px;
-  }
-`;
+import { P } from '@/components/elements/text/text';
 
 const H3 = styled.h3`
   margin-block: 50px 20px;

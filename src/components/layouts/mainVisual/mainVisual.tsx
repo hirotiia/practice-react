@@ -38,7 +38,7 @@ export const MainVisual = ({ children }: { children: string }) => {
   return (
     <Visual>
       <h1>{children}</h1>
-      <img src='/img/img_stock.jpg' alt='' />
+      <img src='/img/img_stock.jpg' alt='' width={2400} height={350} />
     </Visual>
   );
 };

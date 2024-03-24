@@ -4,6 +4,7 @@ const Text = styled.p`
   font-size: 0.8rem;
   margin-top: 30px;
   color: #666666;
+  font-size: 0.9rem;
 
   @media screen and (min-width: 760px) {
     font-size: 1rem;
