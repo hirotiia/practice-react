@@ -1,9 +1,15 @@
 import { styled } from 'styled-components';
 
-const styledP = styled.p`
-  margin-block: 10px;
+const Text = styled.p`
+  font-size: 1rem;
+  margin-top: 30px;
+  color: #666666;
+
+  & + p {
+    margin-top: 10px;
+  }
 `;
 
-export function Text() {
-  return <p></p>;
+export function P({ children }: { children: string }) {
+  return <Text>{children}</Text>;
 }

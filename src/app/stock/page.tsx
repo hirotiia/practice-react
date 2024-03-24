@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import { styled } from 'styled-components';
 import { Box1 } from '@/components/elements/box/box1/box1';
 import { H1 } from '@/components/elements/heading/headingLv1/headingLv1';
 import { ArticlePanel } from '@/components/elements/panel/panel';
+import { P } from '@/components/elements/text/text';
 
 type ArticleData = {
   globalNews: { feed: Feed[] };
@@ -40,15 +40,6 @@ type Feed = {
   url: string;
 };
 
-const P = styled.p`
-  margin-top: 30px;
-  color: #666666;
-
-  & + p {
-    margin-top: 10px;
-  }
-`;
-
 export default function Page() {
   const [tickerSymbol, setSymbol] = useState('');
   const [data, setData] = useState<ArticleData>({ globalNews: { feed: [] } });
@@ -63,10 +54,10 @@ export default function Page() {
 
   return (
     <>
-      <H1>米国株最新ニュース検索</H1>
+      <H1>関連銘柄ニュース検索</H1>
       <P>ティッカーシンボルを入力すると、その銘柄に関する最新のニュースを一覧で確認できます。</P>
       <Box1>
-        <P>米国株以外には現在対応しておりません。</P>
+        <P>※米国株以外には現在対応しておりません。</P>
       </Box1>
       <label>
         Ticker symbol
