@@ -110,7 +110,6 @@ const Item3 = styled.time`
 `;
 
 export const ArticlePanel = ({ articles }: ArticlePanelProps) => {
-  console.log(articles);
   const articlePanelItems = articles.map((article, index) => {
     const dateString = article.time_published.split('T')[0];
     const yyyy = dateString.substring(0, 4);
@@ -124,7 +123,6 @@ export const ArticlePanel = ({ articles }: ArticlePanelProps) => {
     const day = dateObject.getDate();
     const formattedDate = `${year}年${month}月${day}日`;
     const dateTimeValue = `${year}-${month}-${day}`;
-    console.log(article.time_published.split('T')[0]);
 
     return (
       <Article

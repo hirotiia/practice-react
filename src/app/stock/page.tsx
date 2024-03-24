@@ -96,7 +96,6 @@ export default function Page() {
     const response = await fetch(`/api/stock?ticker_symbol=${tickerSymbol}`);
     const responseData = await response.json();
     setData(responseData);
-    console.log(data.globalNews.feed);
   }
 
   return (
