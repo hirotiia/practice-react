@@ -1,8 +1,8 @@
 'use client';
 
 import { styled } from 'styled-components';
-import { H1 } from '@/components/elements/heading/headingLv1/headingLv1';
-import { ListItems } from '@/components/elements/list/list/list';
+import { H2 } from '@/components/elements/heading/headingLv2/headingLv2';
+import { TimeList } from '@/components/elements/list/timeList/timeList';
 
 const P = styled.p`
   margin-top: 30px;
@@ -13,10 +13,11 @@ const P = styled.p`
   }
 `;
 
-const H2 = styled.h2`
+const H3 = styled.h3`
   margin-block: 50px 20px;
   padding-bottom: 5px;
   border-bottom: 2px solid #3ea8ff;
+  color: #333;
 `;
 
 export default function Home() {
@@ -46,15 +47,15 @@ export default function Home() {
 
   return (
     <>
-      <H1>React学習記録</H1>
+      <H2>React学習記録</H2>
       <P>このサイトはReactを学びながら、Next.jsの環境にもなれていくための学習記録サイトです。</P>
       <P>
         サンプルとして米国株APIをしようして、銘柄の最新情報を取得するアプリケーションを開発予定です。
       </P>
-      <H2>学習中の教材一覧</H2>
-      <ListItems listData={materials}></ListItems>
-      <H2>作成中のページ</H2>
-      <ListItems listData={createPage}></ListItems>
+      <H3>学習中の教材一覧</H3>
+      <TimeList listData={materials}></TimeList>
+      <H3>作成中のページ</H3>
+      <TimeList listData={createPage}></TimeList>
     </>
   );
 }

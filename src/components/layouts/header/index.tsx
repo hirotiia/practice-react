@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { styled } from 'styled-components';
+import { GlobalNav } from '@/components/layouts/header/globalNav/globalNav';
 
 const StyledHeader = styled.header`
   padding: 20px;
@@ -19,9 +20,53 @@ const StyledHeader = styled.header`
       text-decoration: underline;
     }
   }
+
+  div {
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      > span {
+        color: #333;
+        font-size: 0.8rem;
+        @media screen and (min-width: 760px) {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+`;
+
+const Nav = styled.nav`
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Header = () => {
+  const globalNav = [
+    {
+      id: 1,
+      time: '',
+      href: '/',
+      text: 'TOP',
+    },
+    {
+      id: 2,
+      time: '',
+      href: '/lessons',
+      text: 'lesson',
+    },
+    {
+      id: 3,
+      time: '',
+      href: '/stock',
+      text: '銘柄関連検索',
+    },
+  ];
   return (
     <StyledHeader>
       <div>
@@ -32,13 +77,12 @@ export const Header = () => {
             width={50}
             height={50}
           />
+          <span>Hroya Nakano dev...</span>
         </a>
       </div>
-      <div>
-        <Link className='link-lesson' href={'/lessons'}>
-          Lessons ページへ
-        </Link>
-      </div>
+      <Nav>
+        <GlobalNav listData={globalNav}></GlobalNav>
+      </Nav>
     </StyledHeader>
   );
 };

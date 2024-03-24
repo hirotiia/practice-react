@@ -1,8 +1,11 @@
 import Link from 'next/link';
 import { styled } from 'styled-components';
 
-const RessonsList = styled.ul`
-  margin-top: 20px;
+const List = styled.ul`
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
 
   li {
     list-style-type: none;
@@ -11,28 +14,25 @@ const RessonsList = styled.ul`
     gap: 20px;
 
     a {
-      text-decoration: underline;
+      text-decoration: none;
       color: #3ea8ff;
+      font-size: 0.9rem;
+
+      @media screen and (min-width: 760px) {
+        font-size: 1rem;
+      }
 
       &:hover {
         text-decoration: none;
       }
     }
-
-    time {
-      color: #666666;
-    }
-
-    & + li {
-      margin-top: 20px;
-    }
   }
 `;
 
-export function ListItems({
+export function GlobalNav({
   listData,
 }: {
-  listData: Array<{ id: number; time: string; href: string; text: string }>;
+  listData: Array<{ id: number; href: string; text: string }>;
 }) {
   const listItems = listData.map((data) => {
     const isAbsoluteURL = data.href.startsWith('http');
@@ -41,9 +41,6 @@ export function ListItems({
     return (
       <li key={data.id}>
         <div>
-          <time dateTime={data.time}>{data.time.replaceAll('-', '.')}</time>
-        </div>
-        <div>
           <Link href={data.href} {...targetBlank}>
             {data.text}
           </Link>
@@ -51,5 +48,5 @@ export function ListItems({
       </li>
     );
   });
-  return <RessonsList>{listItems}</RessonsList>;
+  return <List>{listItems}</List>;
 }
