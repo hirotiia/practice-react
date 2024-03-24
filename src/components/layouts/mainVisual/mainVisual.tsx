@@ -11,7 +11,7 @@ const Visual = styled.div`
   place-content: center;
 
   h1 {
-    color: #333;
+    color: #fff;
     text-align: center;
     margin: auto;
     font-size: 1.5rem;
@@ -31,7 +31,6 @@ const Visual = styled.div`
     z-index: -1;
     margin: 0 calc(50% - 50vw); /* 画面幅いっぱいにはみ出させるためのネガティブマージン */
     width: 100vw;
-    opacity: 0.6;
   }
 `;
 
